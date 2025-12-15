@@ -2,6 +2,7 @@
 using CalisApi.Models;
 using CalisApi.Models.DTOs;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace CalisApi.Database.Repositories
 {
@@ -34,10 +35,17 @@ namespace CalisApi.Database.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Session> GetByDate(DateTime date)
+        public async Task<IEnumerable<Session>> GetAllSessionsByDate(DateTime date)
+        {
+            return await _context.Sessions.Where(x => x.Date.Date == date.Date).ToListAsync();
+            
+
+        }
+
+        public async Task<Session> GetSessionByDate(DateTime date)
         {
             var e = await _context.Sessions.FirstOrDefaultAsync(x => x.Date == date);
-            if(e == null)
+            if (e == null)
             {
                 return null;
             }

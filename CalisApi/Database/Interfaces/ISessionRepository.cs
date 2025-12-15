@@ -8,7 +8,9 @@ namespace CalisApi.Database.Interfaces
         Task<IEnumerable<Session>> GetAll();
         Task<Session> GetSessionById(int id);
         
-        Task<Session> GetByDate(DateTime date);
+        Task<IEnumerable<Session>> GetAllSessionsByDate(DateTime date);
+
+        Task<Session> GetSessionByDate(DateTime date);
         Task Create(Session session);
         
         Task<List<SessionUserDataDto>> GetEnrolledUsers(int id);
