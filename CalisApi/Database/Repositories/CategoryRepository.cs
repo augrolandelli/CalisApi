@@ -28,7 +28,6 @@ namespace CalisApi.Database.Repositories
             return category;
         }
 
-
         public async Task<Category> AddCategoryAsync(Category category)
         {
             _context.Categories.Add(category);

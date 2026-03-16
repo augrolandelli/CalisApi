@@ -60,7 +60,6 @@ namespace CalisApi.Controllers
 
 
         [HttpPost("register")]
-        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Register([FromBody] RegisterDto user)
         {
             try

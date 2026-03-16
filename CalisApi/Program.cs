@@ -59,7 +59,7 @@ builder.Services.AddScoped<IUserSessionRepository, UserSessionRepository>();
 builder.Services.AddScoped<ISessionRepository, SessionRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IVideoRepository, VideoRepository>();
-
+builder.Services.AddScoped<IRutineRepository, RutineRepository>();
 var awsRegion = builder.Configuration["AWS:Region"];
 var awsAccessKey = builder.Configuration["AWS:AccessKey"];
 var awsSecretKey = builder.Configuration["AWS:SecretKey"];
